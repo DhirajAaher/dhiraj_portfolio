@@ -117,14 +117,14 @@
 .nav-bg {
   position: absolute;
   inset: 0;
-  background: rgba(252,251,249,0);
+  background: rgba(9, 9, 11, 0);
   backdrop-filter: blur(0px);
   transition: all 0.5s ease;
   border-bottom: 1px solid transparent;
 }
 
 .nav.compact .nav-bg {
-  background: rgba(252,251,249,0.88);
+  background: rgba(9, 9, 11, 0.88);
   backdrop-filter: blur(24px);
   border-bottom-color: var(--border);
 }
