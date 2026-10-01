@@ -491,7 +491,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent);
-  border-bottom: 1px solid rgba(0, 229, 255,0.3);
+  border-bottom: 1px solid rgba(255, 106, 0,0.3);
   padding-bottom: 4px;
   transition: gap 0.3s, border-color 0.3s;
 }
@@ -694,7 +694,7 @@
 }
 
 .project-row:hover .proj-tag {
-  border-color: rgba(0, 229, 255,0.3);
+  border-color: rgba(255, 106, 0,0.3);
   color: var(--accent);
 }
 
@@ -1072,8 +1072,8 @@
 
 .cf-field input:focus,
 .cf-field textarea:focus {
-  border-color: rgba(0, 229, 255,0.5);
-  box-shadow: 0 0 0 3px rgba(0, 229, 255,0.08);
+  border-color: rgba(255, 106, 0,0.5);
+  box-shadow: 0 0 0 3px rgba(255, 106, 0,0.08);
 }
 
 .cf-field input::placeholder,
@@ -1102,7 +1102,7 @@
   background: var(--accent);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 229, 255,0.35);
+  box-shadow: 0 8px 24px rgba(255, 106, 0,0.35);
 }
 
 /* ── FOOTER ──────────────────────────────── */
