@@ -29,7 +29,7 @@
   position: absolute;
   inset: 0;
   border-radius: 16px;
-  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(0, 229, 255, 0.1), transparent 40%);
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(59, 130, 246, 0.1), transparent 40%);
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;
@@ -37,8 +37,8 @@
 }
 
 .uiverse-card:hover {
-  box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(0, 229, 255,0.15);
-  border-color: rgba(0, 229, 255,0.4);
+  box-shadow: 0 30px 60px rgba(17, 24, 39, 0.15), 0 0 40px rgba(59, 130, 246,0.15);
+  border-color: rgba(59, 130, 246,0.4);
 }
 
 .uiverse-card:hover::before {
@@ -62,14 +62,14 @@
   align-items: center;
   gap: 16px;
   transform: translateZ(30px);
-  text-shadow: 0 4px 20px rgba(0, 229, 255,0.4);
+  text-shadow: 0 4px 20px rgba(59, 130, 246,0.4);
 }
 
 .skill-category-title::after {
   content: '';
   flex: 1;
   height: 1px;
-  background: rgba(0, 229, 255,0.3);
+  background: rgba(59, 130, 246,0.3);
 }
 
 .skill-3d-item {
@@ -84,7 +84,7 @@
 }
 
 .uiverse-card:hover .skill-3d-item {
-  border-bottom-color: rgba(0, 229, 255,0.2);
+  border-bottom-color: rgba(59, 130, 246,0.2);
 }
 
 .skill-3d-name {
@@ -95,7 +95,7 @@
 }
 
 .uiverse-card:hover .skill-3d-name {
-  color: #fff;
+  color: var(--accent);
 }
 
 .skill-3d-bar {
@@ -106,7 +106,7 @@
   overflow: hidden;
   position: relative;
   transform: translateZ(50px);
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+  box-shadow: inset 0 1px 3px rgba(17, 24, 39, 0.08);
 }
 
 .skill-3d-bar-fill {

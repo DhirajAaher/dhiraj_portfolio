@@ -110,7 +110,7 @@ const Hero3D = () => {
               <a href="#work" className="px-6 py-3 bg-foreground text-background text-sm font-semibold rounded-full hover:bg-gray-800 transition-colors">
                 View My Work
               </a>
-              <a href="https://drive.google.com/file/d/1iZzvSKDtincZ1TmBB8madPRwVhTw17zt/view?usp=sharing" target="_blank" rel="noreferrer" className="px-6 py-3 border border-gray-300 text-foreground text-sm font-semibold rounded-full hover:border-foreground transition-colors">
+              <a href="https://drive.google.com/file/d/1lpFwOl28MRxNNOtOqEw8WPgSLfVHVQu0/view?usp=sharing" target="_blank" rel="noreferrer" className="px-6 py-3 border border-gray-300 text-foreground text-sm font-semibold rounded-full hover:border-foreground transition-colors">
                 Resume
               </a>
             </div>

@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&display=swap');
 
 :root {
-  --bg:        #09090b;
-  --bg-raised: #121214;
-  --fg:        #f4f3f0;
-  --fg-muted:  rgba(244, 243, 240, 0.55);
-  --fg-subtle: rgba(244, 243, 240, 0.1);
-  --accent:    #eab308;
-  --accent-dim:rgba(234, 179, 8, 0.1);
-  --border:    rgba(244, 243, 240, 0.06);
-  --border-md: rgba(244, 243, 240, 0.12);
+  --bg:        #fcfdfd;
+  --bg-raised: #f3f4f6;
+  --fg:        #111827;
+  --fg-muted:  rgba(17, 24, 39, 0.65);
+  --fg-subtle: rgba(17, 24, 39, 0.1);
+  --accent:    #3b82f6;
+  --accent-dim:rgba(59, 130, 246, 0.12);
+  --border:    rgba(17, 24, 39, 0.08);
+  --border-md: rgba(17, 24, 39, 0.15);
   --font:      'Inter', system-ui, sans-serif;
   --font-serif:'Playfair Display', serif;
   --mono:      'JetBrains Mono', monospace;
@@ -43,13 +43,13 @@ img { max-width: 100%; }
 button { font-family: inherit; border: none; background: none; cursor: none; }
 
 ::selection {
-  background: rgba(234, 179, 8, 0.25);
+  background: rgba(59, 130, 246, 0.25);
   color: var(--fg);
 }
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: rgba(244, 243, 240, 0.15); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: rgba(17, 24, 39, 0.15); border-radius: 4px; }
 
 /* Grain overlay */
 .grain {

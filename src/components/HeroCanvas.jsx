@@ -30,7 +30,7 @@ function Particles({ count = 120 }) {
         <bufferAttribute attach="attributes-position" count={count} array={positions} itemSize={3} />
         <bufferAttribute attach="attributes-size" count={count} array={sizes} itemSize={1} />
       </bufferGeometry>
-      <pointsMaterial color="#e9e2cf" size={0.045} transparent opacity={0.22} sizeAttenuation />
+      <pointsMaterial color="#3b82f6" size={0.045} transparent opacity={0.22} sizeAttenuation />
     </points>
   );
 }
@@ -50,7 +50,7 @@ function GlowOrb() {
       <mesh ref={mesh} position={[3, -0.5, -2]}>
         <sphereGeometry args={[1.8, 32, 32]} />
         <meshStandardMaterial
-          color="#00e5ff"
+          color="#3b82f6"
           transparent
           opacity={0.06}
           roughness={0.1}
@@ -61,7 +61,7 @@ function GlowOrb() {
       <mesh position={[3, -0.5, -2]}>
         <sphereGeometry args={[2.0, 16, 16]} />
         <meshStandardMaterial
-          color="#00e5ff"
+          color="#3b82f6"
           wireframe
           transparent
           opacity={0.04}
@@ -79,8 +79,8 @@ export default function HeroCanvas() {
       style={{ width: '100%', height: '100%' }}
     >
       <ambientLight intensity={0.2} />
-      <pointLight position={[5, 5, 5]} intensity={0.6} color="#00e5ff" />
-      <pointLight position={[-8, -3, 2]} intensity={0.3} color="#e9e2cf" />
+      <pointLight position={[5, 5, 5]} intensity={0.6} color="#3b82f6" />
+      <pointLight position={[-8, -3, 2]} intensity={0.3} color="#3b82f6" />
       <Particles count={130} />
       <GlowOrb />
     </Canvas>

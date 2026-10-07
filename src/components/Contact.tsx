@@ -23,7 +23,7 @@ const Contact = () => {
               <div className="flex gap-6 text-sm font-semibold tracking-widest uppercase text-gray-500 pt-8 border-t border-gray-800">
                 <a href="https://linkedin.com/in/dhiraj-aher" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
                 <a href="https://github.com/DhirajAaher" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
-                <a href="https://drive.google.com/file/d/1iZzvSKDtincZ1TmBB8madPRwVhTw17zt/view?usp=sharing" target="_blank" rel="noreferrer" className="hover:text-white transition-colors text-white">Download Resume</a>
+                <a href="https://drive.google.com/file/d/1lpFwOl28MRxNNOtOqEw8WPgSLfVHVQu0/view?usp=sharing" target="_blank" rel="noreferrer" className="hover:text-white transition-colors text-white">Download Resume</a>
               </div>
             </div>
           </div>

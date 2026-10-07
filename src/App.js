@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
 import './App.css';
 
 import Cursor from './components/Cursor';
@@ -26,7 +26,7 @@ function Footer() {
           </a>
         ))}
       </nav>
-      <span className="footer-copy">© 2024 Dhiraj Aher · Pune, India</span>
+      <span className="footer-copy">© {new Date().getFullYear()} Dhiraj Aher · Pune, India</span>
     </footer>
   );
 }
@@ -34,6 +34,12 @@ function Footer() {
 /* ── Main App ────────────────────────────── */
 export default function App() {
   const [loaded, setLoaded] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   /* Lenis smooth scroll — init once content is loaded */
   useEffect(() => {
@@ -67,6 +73,23 @@ export default function App() {
     <>
       {/* Custom cursor */}
       <Cursor />
+
+      {/* Scroll Progress Bar */}
+      {loaded && (
+        <motion.div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '4px',
+            background: 'var(--accent)',
+            transformOrigin: '0%',
+            scaleX,
+            zIndex: 9999,
+          }}
+        />
+      )}
 
       {/* Loading screen */}
       <AnimatePresence>

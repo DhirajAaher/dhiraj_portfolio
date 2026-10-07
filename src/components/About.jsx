@@ -1,5 +1,6 @@
 import { useInView } from 'react-intersection-observer';
 import profile from '../assets/profile.jpg';
+import TiltCard from './TiltCard';
 
 function Reveal({ children, delay = 0 }) {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
@@ -83,12 +84,14 @@ export default function About() {
       {/* Right */}
       <div className="about-right">
         <Reveal delay={0.05}>
-          <div className="about-photo-frame">
-            <div className="about-photo-border">
-              <img src={profile} alt="Dhiraj Aher" />
+          <TiltCard>
+            <div className="about-photo-frame" style={{ boxShadow: '0 20px 40px rgba(59, 130, 246, 0.15)' }}>
+              <div className="about-photo-border">
+                <img src={profile} alt="Dhiraj Aher" />
+              </div>
+              <div className="about-photo-tag">CGPA 8.26</div>
             </div>
-            <div className="about-photo-tag">CGPA 8.26</div>
-          </div>
+          </TiltCard>
         </Reveal>
 
         <Reveal delay={0.15}>

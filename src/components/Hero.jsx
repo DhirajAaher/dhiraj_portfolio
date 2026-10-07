@@ -1,5 +1,6 @@
-import { useEffect, useState, Suspense } from 'react';
+import { useEffect, useState, Suspense, useRef } from 'react';
 import { FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const HeroCanvas = (() => {
   let Comp = null;
@@ -13,6 +14,15 @@ const HeroCanvas = (() => {
 
 export default function Hero() {
   const [ready, setReady] = useState(false);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"]
+  });
+
+  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   useEffect(() => {
     const t = setTimeout(() => setReady(true), 80);
@@ -20,25 +30,25 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero" id="hero">
+    <section className="hero" id="hero" ref={ref}>
       {/* 3D particles bg */}
-      <div className="hero-canvas-wrap">
+      <motion.div className="hero-canvas-wrap" style={{ y: yBg, opacity }}>
         <Suspense fallback={null}>
           {ready && <HeroCanvas />}
         </Suspense>
-      </div>
+      </motion.div>
 
       {/* Availability status */}
-      <div className="hero-status">
+      <motion.div className="hero-status" style={{ y: yText, opacity }}>
         <span className="hero-status-dot" />
         Available to work
-      </div>
+      </motion.div>
 
       {/* Top rule */}
-      <div className="hero-line" />
+      <motion.div className="hero-line" style={{ y: yText, opacity }} />
 
       {/* Main name */}
-      <div className="hero-name-wrap">
+      <motion.div className="hero-name-wrap" style={{ y: yText, opacity }}>
         <div className="hero-name-row">
           <span
             className="hero-name hero-name-inner"
@@ -61,15 +71,16 @@ export default function Hero() {
             <span className="hero-name-accent">AHER</span>
           </span>
         </div>
-      </div>
+      </motion.div>
 
       {/* Bottom row */}
-      <div
+      <motion.div
         className="hero-sub-row"
         style={{
-          opacity: ready ? 1 : 0,
+          y: yText,
+          opacity: ready ? opacity : 0,
           transform: ready ? 'translateY(0)' : 'translateY(20px)',
-          transition: 'opacity 0.9s ease 0.6s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.6s',
+          transition: ready ? 'none' : 'opacity 0.9s ease 0.6s, transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.6s',
         }}
       >
         <p className="hero-role">
@@ -81,7 +92,7 @@ export default function Hero() {
           <span className="hero-location">📍 Pune · Maharashtra · India</span>
           <div className="hero-socials">
             <a
-              href="https://drive.google.com/file/d/1iZzvSKDtincZ1TmBB8madPRwVhTw17zt/view?usp=sharing"
+              href="https://drive.google.com/file/d/1lpFwOl28MRxNNOtOqEw8WPgSLfVHVQu0/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
               className="hero-resume-btn"
@@ -108,7 +119,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Scroll cue */}
       <div className="hero-scroll">

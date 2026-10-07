@@ -1,3 +1,4 @@
+import TiltCard from './TiltCard';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub } from 'react-icons/fa';
 import { HiArrowRight } from 'react-icons/hi';
@@ -42,6 +43,8 @@ const projects = [
   },
 ];
 
+
+
 export default function Projects() {
   return (
     <section className="projects" id="projects">
@@ -55,56 +58,88 @@ export default function Projects() {
         </div>
       </Reveal>
 
-      <div className="projects-list">
+      <div className="projects-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
         {projects.map((p, i) => (
           <Reveal key={p.num} delay={i * 0.12}>
-            <a
-              href={p.href}
-              target="_blank"
-              rel="noreferrer"
-              className="project-row"
-            >
-              <span className="proj-num">{p.num} — {p.year}</span>
+            <TiltCard>
+              <a
+                href={p.href}
+                target="_blank"
+                rel="noreferrer"
+                className="project-card"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  padding: '40px',
+                  borderRadius: '16px',
+                  background: 'var(--bg-raised)',
+                  border: '1px solid var(--border)',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  height: '100%',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  boxShadow: '0 10px 30px rgba(17, 24, 39, 0.05)',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+                  <span className="proj-num" style={{ paddingTop: 0, fontWeight: 600, color: 'var(--accent)' }}>{p.num} — {p.year}</span>
+                  <div className="proj-arrow" style={{ position: 'relative', background: 'var(--bg)', borderColor: 'var(--border)' }}>
+                    <HiArrowRight />
+                  </div>
+                </div>
 
-              <div className="proj-main">
-                <h3 className="proj-name">{p.name}</h3>
-                <p className="proj-desc">{p.desc}</p>
-                <div className="proj-tags">
+                <div className="proj-main" style={{ flex: 1 }}>
+                  <h3 className="proj-name" style={{ fontSize: '1.6rem', marginBottom: '16px' }}>{p.name}</h3>
+                  <p className="proj-desc" style={{ maxWidth: '100%', fontSize: '0.95rem' }}>{p.desc}</p>
+                </div>
+                
+                <div className="proj-tags" style={{ marginTop: '24px' }}>
                   {p.tags.map((t) => (
-                    <span className="proj-tag" key={t}>{t}</span>
+                    <span className="proj-tag" key={t} style={{ background: 'var(--bg)' }}>{t}</span>
                   ))}
                 </div>
-              </div>
-
-              <div className="proj-arrow">
-                <HiArrowRight />
-              </div>
-            </a>
+              </a>
+            </TiltCard>
           </Reveal>
         ))}
 
         {/* More CTA */}
         <Reveal delay={0.24}>
-          <a
-            href="https://github.com/DhirajAaher"
-            target="_blank"
-            rel="noreferrer"
-            className="project-row"
-            style={{ opacity: 0.6 }}
-          >
-            <span className="proj-num" style={{ fontStyle: 'italic' }}>∞</span>
-            <div className="proj-main">
-              <h3 className="proj-name" style={{ color: 'var(--fg-muted)', fontWeight: 500 }}>
+          <TiltCard>
+            <a
+              href="https://github.com/DhirajAaher"
+              target="_blank"
+              rel="noreferrer"
+              className="project-card"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                padding: '40px',
+                borderRadius: '16px',
+                background: 'transparent',
+                border: '1px dashed var(--border-md)',
+                textDecoration: 'none',
+                color: 'inherit',
+                height: '100%',
+                opacity: 0.8,
+              }}
+            >
+              <div style={{ fontSize: '2.5rem', color: 'var(--fg-muted)', marginBottom: '16px' }}>
+                <FaGithub />
+              </div>
+              <h3 className="proj-name" style={{ color: 'var(--fg-muted)', fontSize: '1.4rem' }}>
                 More on GitHub
               </h3>
-              <p className="proj-desc">Browse all repositories and open-source contributions.</p>
-            </div>
-            <div className="proj-arrow">
-              <FaGithub />
-            </div>
-          </a>
+              <p className="proj-desc" style={{ margin: 0 }}>Browse all repositories and open-source contributions.</p>
+            </a>
+          </TiltCard>
         </Reveal>
       </div>
     </section>
   );
 }
+
